@@ -4,8 +4,8 @@ const { Router } = require('express');
 const router = Router();
 const axios = require("axios");
 const { Recipe, TypeDiet } = require("../db.js");
-//const API_KEY = "91eea5f84dac4e41b0697d6671ad384c";/*principal */
-const API_KEY = "d0a7c1bfeae2404c9df2b6a16cf26fd7";/*principal */
+const API_KEY = "91eea5f84dac4e41b0697d6671ad384c";/*principal */
+//const API_KEY = "d0a7c1bfeae2404c9df2b6a16cf26fd7";/*principal */
 //const API_KEY = "477281183eac4b20995102b9b11b6249";/*principal */
 
 const{Sequelize}=require("sequelize")

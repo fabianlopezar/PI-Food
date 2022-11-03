@@ -1,12 +1,16 @@
 const GET_RECIPES = "GET_RECIPES";
-const FILTER_BY_DIET = "FILTER_BY_DIET";
+
+const FILTER_DIET = "FILTER_DIET";
+const GET_BY_DIET = "GET_BY_DIET";
+
 const FILTER_CREATED= "FILTER_CREATED"
 const ORDER_BY_TITLE = "ORDER_BY_TITLE";
 const ORDER_BY_SCORE = "ORDER_BY_SCORE";
 const GET_BY_TITLE = "GET_BY_TITLE";
-const GET_BY_ID = "GET_BY_ID";
-const GET_BY_DIET = "GET_BY_ID";
+
 const POST_RECIPES= "POST_RECIPES";
+
+const GET_ID = "GET_ID";
 
 export const initialState = {
   recipes: [],
@@ -33,10 +37,13 @@ function rootReducer(state = initialState, action) {
         recipes: action.payload,
       }
 //---------------------
-    case FILTER_BY_DIET:      
+    case FILTER_DIET:      
+    console.log("soy el.TypeDiet",allRecipes[0].TypeDiet)  
+    console.log("soy el action.payload",allRecipes[0].TypeDiet[0].name)// ketogenic
       const typeDietFilter = action.payload==="all"
       ?allRecipes 
-      :allRecipes.filter(el=>el.TypeDiet.find(el=>el.name===action.payload))
+      //:allRecipes.filter(el=>el.TypeDiet.find(el=>el.name===action.payload))
+      :allRecipes.map(el=>el.TypeDiet.filter(el=>el.name===action.payload))
       return {
         ...state,
         recipes:typeDietFilter
@@ -115,8 +122,9 @@ case POST_RECIPES:
     ...state,
   }
 //---------------------
-case GET_BY_ID:
-  return {
+case GET_ID:
+console.log("deberia funcionar reducer by id")  
+return {
     ...state,
     details:action.payload
   }

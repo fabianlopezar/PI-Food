@@ -1,13 +1,16 @@
 import axios from "axios";
 
 const GET_RECIPES = "GET_RECIPES";
-const FILTER_BY_DIET = "FILTER_BY_DIET";
+
+const FILTER_DIET = "FILTER_DIET";
 const FILTER_CREATED = "FILTER_CREATED";
+
 const ORDER_BY_TITLE = "ORDER_BY_TITLE";
 const ORDER_BY_SCORE = "ORDER_BY_SCORE";
+
 const GET_BY_TITLE = "GET_BY_TITLE";
-const GET_BY_ID = "GET_BY_ID";
-const GET_BY_DIET = "GET_BY_ID";
+const GET_BY_DIET = "GET_BY_DIET";
+const GET_ID = "GET_ID"
 
 //------------------------------------------------------------------
 export function getRecipes() {
@@ -22,7 +25,7 @@ export function getRecipes() {
 //-------------- FUNCION FILTRAR POR DIETA----------------------------------------------------
 export function filterDiet(payload) {
   return {
-    type: FILTER_BY_DIET,
+    type: FILTER_DIET,
     payload,
   };
 }
@@ -66,9 +69,11 @@ export function getTitle(name) {
 export function getRecipesId(id) {
   return async function (dispatch) {
     try {
+      
       let pedidoApi = await axios.get(`http://localhost:3001/recipes/${id}`);
+      console.log("soy la data del action: ", pedidoApi.data)
       return dispatch({
-        type: GET_BY_ID,
+        type: GET_ID,
         payload: pedidoApi.data,
       });
     } catch (error) {

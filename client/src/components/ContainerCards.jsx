@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import Card from "./Card";
 import { getRecipes } from "../redux/actions";
 import { useEffect } from "react";
