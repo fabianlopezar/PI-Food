@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 //importo desde las actions de redux
 import {getTitle} from "../redux/actions.js"
 
+import s from "../styles/SearchBar.module.css"
+
 export default function SearchBar(){
     //----------------------------------
     const dispatch = useDispatch();
@@ -32,7 +34,7 @@ export default function SearchBar(){
        <input type="text" placeholder="Insert Recipe Name"
        onChange={(e)=>handleInputChange(e)}
        />
-       <button type="submit" onClick={(e)=>handleSubmit(e)}>Search</button>
+       <button className={s.button} type="submit" onClick={(e)=>handleSubmit(e)}>Search</button>
     </div>
     )
 }

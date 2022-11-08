@@ -39,11 +39,11 @@ function rootReducer(state = initialState, action) {
 //---------------------
     case FILTER_DIET:      
     console.log("soy el.TypeDiet",allRecipes[0].TypeDiet)  
-    console.log("soy el action.payload",allRecipes[0].TypeDiet[0].name)// ketogenic
+    console.log("soy el TypeDiet.name",allRecipes[0].TypeDiet[0].name)// ketogenic
       const typeDietFilter = action.payload==="all"
       ?allRecipes 
-      //:allRecipes.filter(el=>el.TypeDiet.find(el=>el.name===action.payload))
-      :allRecipes.map(el=>el.TypeDiet.filter(el=>el.name===action.payload))
+      :allRecipes.filter(el=>el.TypeDiet?.find(el=>el.name===action.payload))
+      //:allRecipes.map(el=>el.TypeDiet.filter(el=>el.name===action.payload))
       return {
         ...state,
         recipes:typeDietFilter

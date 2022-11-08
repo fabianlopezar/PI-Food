@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { postRecipes, getTypeDiet } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
+import s from "../styles/Create.module.css"
+
 
 function controlForm(input){
   const lim = new RegExp("^[0-9]+$")
@@ -69,32 +71,33 @@ function handleDelete(e){
 
 //-------------------- RENDERIZADO -----------------------------------------------------------------------------------
 return (
-  <div>
+  <div >
     <Link to="/home">
-      <button>BACK</button>
+      <button className={s.button}>BACK</button>
     </Link>
-    <h1>Recipe Creator</h1>
-    <form onSubmit={(e)=>{handleSubmit(e)}}>
+    <div className={s.card}>
+    <h1 className={s.title}>Recipe Creator</h1>
+    <form className={s.ent} onSubmit={(e)=>{handleSubmit(e)}}>
       <div>
-        <label>title:</label>
+        <label className={s.label}>title:</label>
         <input type="text" value={input.title} name="title" onChange={(e)=>{handleChange(e)}}/>
         {errors.title && (<p>{errors.title}</p>)}
       </div>
       <div>
-        <label>summary:</label>
+        <label className={s.label}>summary:</label>
         <input type="text" name="summary" value={input.summary} onChange={(e)=>{handleChange(e)}}/>
         {errors.sumary && (<p>{errors.summary}</p>)}
       </div>
       <div>
-        <label>healthScore:</label>
+        <label className={s.label}>healthScore:</label>
         <input type="text" name="healthScore" value={input.healthScore} onChange={(e)=>handleChange(e)}/>
-        {errors.healthScore&&(<p>{errors.healthScore}</p>)}
+        {errors.healthScore&&(<p className={s.labelError}>{errors.healthScore}</p>)}
       </div>
       <div>
-        <label>analyzedInstructions</label>
+        <label className={s.label}>analyzedInstructions:</label>
         <input type="text" name="analyzedInstructions" value={input.analyzedInstructions} onChange={(e)=>{handleChange(e)}}/>
       </div>
-      <label>Diet</label>
+      <label className={s.label}>Diet:</label>
       <select onChange={(e)=>{handleSelect(e)}}>
         {diets?.map((el)=>{
           return <option key={el}value={el}>{el}</option>
@@ -106,12 +109,12 @@ return (
     {input.typeDiet.map((el)=>{
       return(
         <div key={el}>
-          <h5>{el}</h5>
-          <button onClick={()=>handleDelete(el)}>X</button>
+          <h5 className={s.label}>{el}</h5>
+          <button  className={s.button} onClick={()=>handleDelete(el)}>X</button>
         </div>
       )
     })}
-
+    </div>
   </div>
   )
 }

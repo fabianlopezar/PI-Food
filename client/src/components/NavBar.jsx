@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { filterDiet,filterCreated } from "../redux/actions";
 
+import s from "../styles/Home.module.css";
 
 export default function NavBar() {
   const dispatch = useDispatch();
@@ -16,9 +17,8 @@ export default function NavBar() {
  
   return (
     <div>
-      <button>Volver a Recargar Recetas</button>
       <div>
-        <select onChange={(el) => handleDiet(el)}>
+        <select className={s.select} onChange={(el) => handleDiet(el)}>
           <option value="all">All Diets</option>
           <option value="gluten free">Gluten Free</option>
           <option value="ketogenic">Ketogenic</option>
@@ -29,7 +29,7 @@ export default function NavBar() {
           <option value="primal">Primal</option>
           <option value="whole 30">Whole 30</option>
         </select>
-        <select onChange={(el)=>handleFilterCreated(el)}>
+        <select className={s.select} onChange={(el)=>handleFilterCreated(el)}>
           <option value="all">Created-Existing</option>
           <option value="created">Created</option>
           <option value="existing">Existing</option>
