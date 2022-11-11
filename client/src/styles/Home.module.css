@@ -5,6 +5,7 @@
     background-color: rgba(0, 0, 0, 0.363);
     color: #ffffff;
     transition: 0.3s;
+    font-size: 25px; 
   }
   
   .button:hover {
@@ -18,6 +19,7 @@
     color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 25px;
+    font-size: 25px; 
   }
   
   .Nav {
@@ -60,11 +62,18 @@
   .box {
     /* display: grid;
     grid-template-columns: repeat(5, 1fr); */
-    justify-content: space-around;
+    align-content: center;
     max-height: 50%;
     max-width: 100%;
     padding: 0;
     margin: 0;
-    
+    border-left-width: 0200px;
 
+  }
+  .containercards{
+      /* centrar vertical y horizontalmente */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px; /* aplicar a top y al margen izquierdo un valor negativo para completar el centrado del elemento hijo */
   }

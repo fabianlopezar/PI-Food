@@ -11,6 +11,7 @@ const GET_BY_TITLE = "GET_BY_TITLE";
 const POST_RECIPES= "POST_RECIPES";
 
 const GET_ID = "GET_ID";
+const RESET_DETAIL="RESET_DETAIL"
 
 export const initialState = {
   recipes: [],
@@ -23,6 +24,13 @@ function rootReducer(state = initialState, action) {
   const allRecipes = state.allRecipes
   switch (action.type) {
     
+
+//---------------------
+case RESET_DETAIL:
+  return{
+    ...state,
+    details:[]
+  }
 //---------------------
     case GET_RECIPES:
       return {
@@ -59,24 +67,26 @@ function rootReducer(state = initialState, action) {
         ?state.allRecipes
         :createdFilter
       }
-//---------------------
+//-------- ORDENAR ALFABETICAMENTE -----------------------------------------
       case ORDER_BY_TITLE:
-        //console.log("deberia funcionar")
-        let order=action.payload==="asc"
+        //-1, se va a situar en un indice menor a b.
+        //1, b se va a situar en un indice menor a a.
+        //0, no hay cambios.
+        let order = action.payload === "asc"
         ?state.recipes.sort(function(a,b){
-          if(a.title.toLowerCase()>b.title.toLowerCase()){
+          if(a.title.toLowerCase() > b.title.toLowerCase()){
             return 1;
           }
-        if(b.title.toLowerCase()>a.title.toLowerCase()){
+        if(b.title.toLowerCase() > a.title.toLowerCase()){
           return -1;
           }
           return 0;
         }):
         state.recipes.sort(function(a,b){
-          if(a.title.toLowerCase()>b.title.toLowerCase()){
+          if(a.title.toLowerCase() > b.title.toLowerCase()){
             return -1;
           }
-          if(b.title.toLowerCase()>a.title.toLowerCase()){
+          if(b.title.toLowerCase() > a.title.toLowerCase()){
             return 1;
           }
           return 0;
@@ -87,6 +97,9 @@ function rootReducer(state = initialState, action) {
       }
 //---------------------
 case ORDER_BY_SCORE:
+  //-1, se va a situar en un indice menor a b.
+  //1, b se va a situar en un indice menor a a.
+  //0, no hay cambios.
   let orderScor = action.payload === 'low' ? 
   state.recipes.sort(function(a,b) {
       if(a.healthScore > b.healthScore) {
@@ -129,9 +142,6 @@ return {
     details:action.payload
   }
 //---------------------
-
-
-
     default:
       return state;
   }

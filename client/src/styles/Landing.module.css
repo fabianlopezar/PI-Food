@@ -15,17 +15,21 @@
     color: #F29F05; 
     text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68; 
 }
-.button{
-    transition-duration: 0.4s;
-    font-family: Comic Sans MS; 
-    text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68; 
-    color: #D96704; 
-    font-size: 50px; 
-    background-color: #8FBFBF;
-    border-radius: 10%;
+.btn{
+  background-color: rgb(0, 0, 0);
+  color: #F29F05;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  font-size: 60px; 
 }
-.button:hover {
-    background-color: #255059; /* Green */
-    color: white;
-  }
-    
+.btn:hover {
+  color: rgb(255, 255, 255);
+  background: rgba(27, 23, 23, 0.281);
+  border: 3px solid #000000;
+}
+.div{
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  margin: -25px 0 0 -25px; /* aplicar a top y al margen izquierdo un valor negativo par*/
+}

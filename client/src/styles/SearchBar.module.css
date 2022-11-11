@@ -1,5 +1,17 @@
-.button{
-    background-color: rgba(0, 0, 0, 0.342);
-    color: white;
+.btn{
+    border-radius: 25px;
+    border: 1px solid #ffffff;
     cursor: pointer;
-}
+    background-color: rgba(0, 0, 0, 0.363);
+    color: #ffffff;
+    transition: 0.3s;
+    font-size: 25px; 
+  }
+  .btn:hover {
+    color: rgb(255, 255, 255);
+    background: rgba(27, 23, 23, 0.281);
+    border: 3px solid #000000;
+  }
+  .input{
+    font-size: 25px;  
+  }

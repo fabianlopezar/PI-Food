@@ -12,6 +12,8 @@ const GET_BY_TITLE = "GET_BY_TITLE";
 const GET_BY_DIET = "GET_BY_DIET";
 const GET_ID = "GET_ID"
 
+const RESET_DETAIL="RESET_DETAIL"
+
 //------------------------------------------------------------------
 export function getRecipes() {
   return async function (dispatch) {
@@ -37,12 +39,18 @@ export function filterCreated(payload) {
   };
 }
 
-//---------------- FUNCION ORDENAR POR TITULO --------------------------------------------------
+//---------------- FUNCION ORDENAR POR TITULO(ALFABETICAMENTE) --------------------------------------------------
 export function orderTitle(payload) {
   return {
     type: ORDER_BY_TITLE,
     payload,
   };
+}
+//------------------------------------------------------------------
+export function resetDetail(){
+  return{
+    type:RESET_DETAIL 
+  }
 }
 //------------------------------------------------------------------
 export function orderScore(payload) {

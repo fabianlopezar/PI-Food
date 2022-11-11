@@ -4,11 +4,11 @@ import style from "../styles/Landing.module.css"
 
 export default function Landing(){
     return (
-        <div>
-            <h1 className={style.title}>¡ 🥣Bienvenidos🥣 !</h1>
-            <h1 className={style.subTitle}>🍳 Proyecto 🥗 Individual 🥗 Food 🍳</h1>
+        <div className={style.div}>
+            <h1 className={style.title}>¡ 🥣Welcome🥣 !</h1>
+            <h1 className={style.subTitle}>🍳 Individual 🥗 Proyect 🥗 Food 🍳</h1>
             <Link to="/home">
-                <button className={style.button}>Ingresar</button>
+                <button className={style.btn}>Enter</button>
             </Link>
         </div>
     )

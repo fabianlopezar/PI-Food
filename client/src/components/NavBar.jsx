@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { filterDiet,filterCreated } from "../redux/actions";
+import { filterDiet, filterCreated } from "../redux/actions";
 
 import s from "../styles/Home.module.css";
 
@@ -11,6 +11,7 @@ export default function NavBar() {
   function handleDiet(e) {
     dispatch(filterDiet(e.target.value));
   }
+  
   function handleFilterCreated(e){
     dispatch(filterCreated(e.target.value));
   }
@@ -29,11 +30,13 @@ export default function NavBar() {
           <option value="primal">Primal</option>
           <option value="whole 30">Whole 30</option>
         </select>
+
         <select className={s.select} onChange={(el)=>handleFilterCreated(el)}>
           <option value="all">Created-Existing</option>
           <option value="created">Created</option>
           <option value="existing">Existing</option>
         </select>
+        
       </div>
     </div>
   );

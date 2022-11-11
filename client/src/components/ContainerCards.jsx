@@ -11,7 +11,7 @@ export default function ContainerCards({currentItems}) {
   useEffect(()=>{
     dispatch(getRecipes())
   },[dispatch]);
-//console.log("Soy todas las recetas",allRecipes)
+
   return(<div>
     {currentItems.length>0?(
         currentItems.map((el)=>(
