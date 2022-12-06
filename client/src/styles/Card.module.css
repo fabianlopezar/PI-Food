@@ -1,14 +1,19 @@
 .card{
     background: rgb(249, 249, 249);
-    width: 20%;
+    width: 500px;
     height: 390px;
-    float: left;
-    margin: 020px 0px 0px 100px;
+    /*float: left;*/
+    margin: 020px 0px 0px 90px;
     border-radius: 15px;
-   
     box-shadow: 1px 10px 14px rgb(107,102,102);
-   
+   align-items: center;
+
 }
+
+.card:hover{
+    border-color:#1d39c4;
+}
+
 .title{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: 'none';
@@ -36,3 +41,8 @@
     align-items: center;
     border-radius: 10px;
   }
+
+  
+ 
+
+

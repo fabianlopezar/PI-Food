@@ -7,6 +7,7 @@ import Card from "../components/Card";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 import { orderScore, orderTitle, getRecipes} from "../redux/actions";
+import Footer from "../components/Footer";
 
 import s from "../styles/Home.module.css";
 
@@ -53,8 +54,9 @@ export default function Home() {
     <div >
         <div className={s.Nav}>
           <div className={s.container}>
+            <Link to="/">
             <img src="https://images.vexels.com/media/users/3/235848/isolated/preview/4b62529b242dcef2dbc6719899ecdd6e-gorro-de-cocinero-de-cocina.png" alt="deberia estar un gorro de shef" width="100" height="80"></img>
-            
+            </Link>
             <select className={s.select} onChange={(el) => handleSort(el)}>
               <option>Order Alphabetic</option>
               <option value="asc">Ascendent ( A - Z )</option>
@@ -80,6 +82,7 @@ export default function Home() {
           </div>
 
       </div>
+      
       <div className = {s.ContainerCards}>  
         {currentItems.length > 0 ? (
           currentItems.map((el) => (
@@ -92,12 +95,14 @@ export default function Home() {
                 id = {el.id}
               />
             </div>
+            
           ))
-        ) : (
+        ) : (<div className={s.load}>
           <Loading />
+          </div>
         )}
       </div>
-     
+<Footer/>     
     </div>
     
   );

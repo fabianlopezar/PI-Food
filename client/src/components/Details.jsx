@@ -5,6 +5,7 @@ import { getRecipesId } from "../redux/actions.js";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "./Loading"
+import Footer from "./Footer.jsx";
 
 import { resetDetail } from "../redux/actions.js";
 
@@ -53,6 +54,7 @@ export default function Details(props) {
             </div>:
         <Loading/>}
         </div>
+        <Footer/>
     </div>
   )
 }

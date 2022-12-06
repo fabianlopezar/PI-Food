@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { postRecipes, getTypeDiet } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import s from "../styles/Create.module.css"
+import Footer from "./Footer.jsx"
 
 function controlForm(input){
   const lim = new RegExp("^[0-9]+$")
   let errors = {}
-  //if(!input.title) errors.title = "You should enter a title";
+  if(!input.title) errors.title = "You should enter a title";
   //if(!input.summary) errors.summary = "You should enter a summary";
-
   if(input.healthScore < 0 || input.healthScore > 100 || !lim.test(input.healthScore))errors.healthScore="You should enter a number between 0 - 100";
 
 
@@ -76,7 +76,7 @@ function handleDelete(e){
 
 //-------------------- RENDERIZADO -----------------------------------------------------------------------------------
 return (
-  <div>
+  <div id={s.fondo}>
 
     <Link to="/home">
       <button className={s.btn}>BACK</button>
@@ -115,24 +115,11 @@ return (
           return <option key={el}value={el}>{el}</option>
         })}
       </select>
-
       {
       errors.hasOwnProperty("title") || errors.hasOwnProperty("summary") ||errors.hasOwnProperty("healthScore")? 
       <h2 className={s.labelError}>You should complete all the inputs</h2>
       :<button className={s.btn} type="submit">Create new Recipe</button>
       }
-
-      {
-
-
-      }
-      
-      
-      
-      
-      
-      
-      
       </form>
       {input.typeDiet.map((el)=>{
       return(
@@ -142,7 +129,9 @@ return (
         </div>
         )
       })}
+      
     </div>
+    <Footer/>
   </div>
   
   )
