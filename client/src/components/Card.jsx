@@ -5,7 +5,7 @@ import style from "../styles/Card.module.css"
 export default function Card({id,title,img,typeDiet,score}) {
   return (
     <div className={style.card} key={id}>
-      <Link to={`/recipes/${id}`}>    
+      <Link to={`/recipes/${id}`} rel="noreferrer">    
         <h3 className={style.title}>Title: {title}</h3>
       </Link>
       <Link to={`/recipes/${id}`}>

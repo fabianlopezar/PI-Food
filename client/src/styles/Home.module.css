@@ -1,26 +1,42 @@
 .button {
-    border-radius: 25px;
-    border: 1px solid #ffffff;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.363);
-    color: #ffffff;
-    transition: 0.3s;
-    font-size: 25px; 
+  color: rgb(0, 0, 0);
+  margin: 0 .5rem;
+  background-color:#bfd989;
+  border-radius: .4rem;
+  font-size: 4rem;
+  padding: .4rem 1rem;
+  cursor:pointer;
+
+  color: #3b7302;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  font-size: 22px; 
+  font-family: Comic Sans MS; 
+  font-weight:bold; 
   }
   
   .button:hover {
     color: rgb(255, 255, 255);
-    background: rgba(27, 23, 23, 0.281);
-    border: 3px solid #000000;
+    background: #F29F05;
+  /*  border: 3px solid #000000;*/
   }
   
   .select {
-    background-color: rgba(0, 0, 0, 0.363);
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 25px;
-    font-size: 25px; 
-    cursor:pointer;
+  color: rgb(0, 0, 0);
+  margin: 0 .5rem;
+  background-color:#bfd989;
+  border-radius: .4rem;
+  font-size: 4rem;
+  padding: .4rem 1rem;
+  cursor:pointer;
+
+  color: #3b7302;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  font-size: 22px; 
+  font-family: Comic Sans MS; 
+  font-weight:bold; 
+  /*text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;*/
   }
   
   .Nav {
@@ -38,12 +54,7 @@
     padding-top: 2px;
     padding-bottom: 19px;
     margin: 0;
-    background-color: grey;
-    /*background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-    background-repeat: no-repeat;
-    background-size: cover;*/
-    
-    
+    background-color: rgba(242, 45, 27, 0.408);
   }
   
   .paginado {
@@ -61,7 +72,6 @@
   }
   
  .load{
-  
   position: sticky;
   top: 50%;
   left: 40%;
@@ -74,3 +84,8 @@
     flex-wrap: wrap;
   }
   
+.fondo{
+    background-image: url("https://i.pinimg.com/originals/14/45/7f/14457f22b5a8d2651269d05391d91bbe.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

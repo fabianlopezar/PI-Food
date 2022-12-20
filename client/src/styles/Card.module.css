@@ -12,17 +12,27 @@
 
 .card:hover{
     border-color:#1d39c4;
+    background-color: #bfd989;
 }
 
 .title{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
     text-decoration: 'none';
-    color: rgb(5, 7, 152);
+    color:#f22d1b;
     text-align: center;
     font-size: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+     
+    font-family: Comic Sans MS; 
+    font-weight:bold; 
+    font-size: 20px; 
+    
+  
 }
 .title:hover{
-    color: black;
+    color: #f28705;
     
 }
 .img{

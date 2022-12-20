@@ -13,7 +13,7 @@ export default function Paginado({ itemsPerPage, allItems, paginado }) {
       <ul className={s.ul}>
         {pageNumbers?.map((number) => (
           <li  key={number} >
-            <a className={s.container} onClick={() => paginado (number)}>{number}</a>
+            <a className={s.container} onClick={() => paginado (number) } href="nada">{number}</a>
           </li>
         ))}
       </ul>
