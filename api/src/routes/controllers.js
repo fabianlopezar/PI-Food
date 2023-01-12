@@ -10,6 +10,4 @@ let diets = [
   { name: "primal" },
   { name: "whole 30" },
 ];
-module.exports = {
-  diets,
-};
+module.exports = {diets,};
